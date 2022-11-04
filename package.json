@@ -1,0 +1,19 @@
+{
+  "name": "fhp-mesa-data-aggregation",
+  "version": "1.0.0",
+  "description": "Collects and sorts daily data from Potsdam's mensa",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sebastian-meier/fhp-mesa-data-aggregation.git"
+  },
+  "author": "sebastian-meier",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sebastian-meier/fhp-mesa-data-aggregation/issues"
+  },
+  "homepage": "https://github.com/sebastian-meier/fhp-mesa-data-aggregation#readme"
+}
