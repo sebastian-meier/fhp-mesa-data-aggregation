@@ -20,7 +20,10 @@ download(url)
       if (!(d.ID in map)) {
         map[d.ID] = [];
       }
-      map[d.ID].push(d);
+      map[d.ID].push({
+        count: d.Anzahl_Belege,
+        avg: d.Durchschnitt
+      });
     });
     Object.keys(map).forEach(key => {
       map[key] = map[key].sort((a, b) => {

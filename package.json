@@ -4,7 +4,7 @@
   "description": "Collects and sorts daily data from Potsdam's mensa",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "download": "node index.js"
   },
   "repository": {
     "type": "git",
