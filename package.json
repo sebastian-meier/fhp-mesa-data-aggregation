@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/sebastian-meier/fhp-mesa-data-aggregation/issues"
   },
-  "homepage": "https://github.com/sebastian-meier/fhp-mesa-data-aggregation#readme"
+  "homepage": "https://github.com/sebastian-meier/fhp-mesa-data-aggregation#readme",
+  "dependencies": {
+    "xml2js": "^0.4.23"
+  }
 }

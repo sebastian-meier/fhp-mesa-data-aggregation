@@ -1,0 +1,41 @@
+[
+  {
+    "Name": "Am Neuen Palais",
+    "ID": 350,
+    "URI": "np"
+  },
+  {
+    "Name": "Golm",
+    "ID": 351,
+    "URI": "go"
+  },
+  {
+    "Name": "Griebnitzsee",
+    "ID": 353,
+    "URI": "gs"
+  },
+  {
+    "Name": "Filmuni",
+    "ID": 354,
+    "URI": "fi"
+  },
+  {
+    "Name": "Kiepenheuerallee",
+    "ID": 355,
+    "URI": "ka"
+  },
+  {
+    "Name": "Wildau",
+    "ID": 356,
+    "URI": "w"
+  },
+  {
+    "Name": "Brandenburg",
+    "ID": 357,
+    "URI": "b"
+  },
+  {
+    "Name": "Am Neuen Palais",
+    "ID": 370
+  }
+]
