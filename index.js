@@ -58,29 +58,46 @@ download(url)
           const angebot = {
             description: a.beschreibung[0],
             labels: a.labels[0].label.map(l => l.$.name),
-            allergens: a['additives-allergens'][0].allergens[0].allergen.map(allergen => {
-              return {
-                abbreviation: allergen.ke[0]['_'],
-                description: allergen.be[0]['_'],
-                ingredient: allergen.ie[0]['_']
-              };
-            }),
-            nutrients: a.nutrients[0].nutrient.map(nutrient => {
-              return {
-                name: nutrient.name[0],
-                wert: parseFloat(nutrient.wert[0]),
-                einheit: nutrient.einheit[0]
-              };
-            }),
+            allergens: ((typeof a['additives-allergens'][0].allergens[0]) === 'object' && 'allergen' in a['additives-allergens'][0].allergens[0]) 
+              ? a['additives-allergens'][0].allergens[0].allergen.map(allergen => {
+                return {
+                  abbreviation: allergen.ke[0]['_'],
+                  description: allergen.be[0]['_'],
+                  ingredient: allergen.ie[0]['_']
+                };
+              })
+              : [],
+            nutrients: ((typeof a.nutrients[0]) === 'object' && 'nutrient' in a.nutrients[0])
+              ? a.nutrients[0].nutrient.map(nutrient => {
+                return {
+                  name: nutrient.name[0],
+                  wert: parseFloat(nutrient.wert[0]),
+                  einheit: nutrient.einheit[0]
+                };
+              })
+              : [],
             price: {
               s: parseFloat(a.preis_s[0]),
               m: parseFloat(a.preis_m[0]),
               g: parseFloat(a.preis_g[0])
             },
-            filters: [
-              ...a.filteroptionen[0].positivfilter[0].filter.map(f => f.$.name),
-              ...a.filteroptionen[0].negativfilter[0].filter.map(f => f.$.name)
-            ]
+            filters: {
+              positiv:
+                (
+                  (typeof a.filteroptionen[0].positivfilter[0]) === 'object'
+                  && 'filter' in a.filteroptionen[0].positivfilter[0]
+                )
+                  ? a.filteroptionen[0].positivfilter[0].filter.map(f => f.$.name)
+                  : [],
+              negativ:
+                (
+                  (typeof a.filteroptionen[0].negativfilter[0]) === 'object'
+                  && 'filter' in a.filteroptionen[0].negativfilter[0]
+
+                )
+                  ? a.filteroptionen[0].negativfilter[0].filter.map(f => f.$.name)
+                  : []
+            }
           };
 
           food.push(angebot);
